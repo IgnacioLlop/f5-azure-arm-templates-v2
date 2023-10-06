@@ -378,7 +378,7 @@
                 "name": "loadBalancerMgmtFrontEnd",
                 "properties": {
                     "publicIPAddress": {
-                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-pip-01'))]"
+                        "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-01-pip'))]"
                     }
                 }
             }
@@ -500,7 +500,7 @@
                 "name": "mgmtpipcopy"
             },
             "location": "[resourceGroup().location]",
-            "name": "[concat(variables('uniqueString'), '-mgmt-pip-0', copyIndex(1))]",
+            "name": "[concat(variables('uniqueString'), '-mgmt-0', copyIndex(1),'-pip')]",
             "properties": {
                 "dnsSettings": {
                     "domainNameLabel": "[concat(variables('uniqueString'), '-mgmt', copyIndex(0))]"
@@ -522,7 +522,7 @@
                 "name": "apppipcopy"
             },
             "location": "[resourceGroup().location]",
-            "name": "[concat(variables('uniqueString'), '-app-pip-0', copyIndex(1))]",
+            "name": "[concat(variables('uniqueString'), '-app-0', copyIndex(1),'-pip')]",
             "properties": {
                 "dnsSettings": {
                     "domainNameLabel": "[concat(variables('uniqueString'), '-app', copyIndex(0))]"
@@ -595,7 +595,7 @@
             "condition": "[greater(parameters('numberPublicExternalIpAddresses'), 0)]",
             "copy": {
                 "count": "[parameters('numberPublicExternalIpAddresses')]",
-                "input": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-pip-0', copyIndex(1)))]"
+                "input": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-0', copyIndex(1),'-pip'))]"
             },
             "type": "array"
         },
@@ -603,7 +603,7 @@
             "condition": "[greater(parameters('numberPublicExternalIpAddresses'), 0)]",
             "copy": {
                 "count": "[parameters('numberPublicExternalIpAddresses')]",
-                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-pip-0', copyIndex(1)))).ipAddress]"
+                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-0', copyIndex(1),'-pip'))).ipAddress]"
             },
             "type": "array"
         },
@@ -611,7 +611,7 @@
             "condition": "[greater(parameters('numberPublicExternalIpAddresses'), 0)]",
             "copy": {
                 "count": "[parameters('numberPublicExternalIPAddresses')]",
-                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-pip-0', copyIndex(1)))).dnsSettings.fqdn]"
+                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-0', copyIndex(1),'-pip'))).dnsSettings.fqdn]"
             },
             "type": "array"
         },
@@ -701,7 +701,7 @@
             "condition": "[greater(parameters('numberPublicMgmtIpAddresses'), 0)]",
             "copy": {
                 "count": "[parameters('numberPublicMgmtIpAddresses')]",
-                "input": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-pip-0', copyIndex(1)))]"
+                "input": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-0', copyIndex(1),'-pip'))]"
             },
             "type": "array"
         },
@@ -709,7 +709,7 @@
             "condition": "[greater(parameters('numberPublicMgmtIpAddresses'), 0)]",
             "copy": {
                 "count": "[parameters('numberPublicMgmtIpAddresses')]",
-                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-pip-0', copyIndex(1)))).ipAddress]"
+                "input": "[reference(resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-mgmt-0', copyIndex(1),'-pip'))).ipAddress]"
             },
             "type": "array"
         },
