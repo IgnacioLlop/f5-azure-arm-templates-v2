@@ -100,7 +100,7 @@
             "sku":"20_04-lts",
             "version":"latest"
         },
-        "nicName":"[concat(variables('vmName'), '-nic-01')]",
+        "nicName":"[concat(variables('vmName'), '-01-nic')]",
         "networkSecurityGroup":{
             "id":"[parameters('nsgId')]"
         },
