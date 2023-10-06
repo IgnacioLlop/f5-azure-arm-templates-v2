@@ -361,9 +361,9 @@
     "ipConfigurationsNic1": "[union(variables('ipConfigurationNic1Primary'), variables('constructNic1ServiceIpConfigs'))]",
     "ipConfigurationsNic2": "[union(variables('ipConfigurationNic2Primary'), variables('constructNic2ServiceIpConfigs'))]",
     "networkInterfaceCount": "[add(add(if(empty(parameters('mgmtSubnetId')), 0, add(0, 1)), if(empty(parameters('nic1SubnetId')), 0, add(0, 1))), if(empty(parameters('nic2SubnetId')), 0, add(0, 1)))]",
-    "networkInterfaceName0": "[concat(parameters('vmName'), '-nic-01')]",
-    "networkInterfaceName1": "[concat(parameters('vmName'), '-nic-02')]",
-    "networkInterfaceName2": "[concat(parameters('vmName'), '-nic-03')]",
+    "networkInterfaceName0": "[concat(parameters('vmName'), '-01-nic')]",
+    "networkInterfaceName1": "[concat(parameters('vmName'), '-02-nic')]",
+    "networkInterfaceName2": "[concat(parameters('vmName'), '-03-nic')]",
     "networkInterfaces": "[union(createArray(variables('networkInterfacesArray')[0]), if(empty(parameters('nic1SubnetId')), variables('emptyArray'), createArray(variables('networkInterfacesArray')[1])), if(empty(parameters('nic2SubnetId')), variables('emptyArray'), createArray(variables('networkInterfacesArray')[2])))]",
     "networkInterfacesArray": [
       {
