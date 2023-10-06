@@ -324,8 +324,8 @@
     "externalSecurityGroup": "[variables('externalNsgRulesArray')]",
     "internalSecurityGroup": "[if(greaterOrEquals(parameters('numNics'), 3), variables('internalNsgRulesArray'), createArray())]",
     "cfeStorageAccountName": "[if(not(empty(parameters('cfeStorageAccountName'))), parameters('cfeStorageAccountName'), concat(parameters('uniqueString'), 'stcfe'))]",
-    "vmName01": "[concat(variables('uniqueString'), '-bigip-01-vm')]",
-    "vmName02": "[concat(variables('uniqueString'), '-bigip-02-vm')]"
+    "vmName01": "[concat(variables('uniqueString'), '-01-vm')]",
+    "vmName02": "[concat(variables('uniqueString'), '-02-vm')]"
   },
   "resources": [
     {
