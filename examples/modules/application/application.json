@@ -106,7 +106,7 @@
         },
         "storageAccountType":"Standard_LRS",
         "storageName":"[concat(uniqueString(resourceGroup().name, resourceGroup().id, deployment().name), 'stapp')]",
-        "vmName":"[concat(parameters('instanceName'), '-app-vm-01')]",
+        "vmName":"[concat(parameters('instanceName'), '-app-vm01')]",
         "vmssName":"[concat(parameters('instanceName'), '-app-vmss')]"
     },
     "resources":[
