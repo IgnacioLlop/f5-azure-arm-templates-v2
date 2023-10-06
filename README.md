@@ -1,3 +1,56 @@
+This is a modify template of F5 BIG-IP Azure ARM Templates 2.0 where modifications are related with naming 
+=======================================================================================================================================================================================
+NIC NAMING
+From
+VMNAME-bigip-vm-01-nic02
+to 
+VMNAME-bigip-vm01-02-nic
+
+Nic should be modified on 
+
+examples\modules\bigip-standalone\bigip.json.origin
+364-365-366
+
+\examples\modules\bastion\bastion.json.origin
+103
+
+\examples\modules\application\application.json.origin
+103
+=======================================================================================================================================================================================
+NSG NAMING
+From 
+VMNAME-nsg-01
+To 
+VMNAME-01-nsg
+
+NSG should be modified on 
+/examples/modules/dag/dag.json.origin
+389-393-397-401-405
+=======================================================================================================================================================================================
+PIP NAMING
+From 
+VMNAME-app-pip-01
+to
+VMNAMEz-app-01-pip
+
+PIP should be modified on multiple lines
+examples/modules/dag/dag.json
+examples/modules/dag/dag.json.origin.2
+
+=======================================================================================================================================================================================
+VM NAMING
+From 
+VMNAME-vm-01
+to
+VMNAME-01-vm
+
+VM should be modified on 
+Examples/failover/azuredeploy.json.origin
+345-346
+=======================================================================================================================================================================================
+=======================================================================================================================================================================================
+
+
 # F5 BIG-IP Azure ARM Templates
 
 [![Releases](https://img.shields.io/github/release/f5networks/f5-azure-arm-templates-v2.svg)](https://github.com/f5networks/f5-azure-arm-templates-v2/releases)
