@@ -1,4 +1,4 @@
-This is a modify template of F5 BIG-IP Azure ARM Templates 2.0 where modifications are related with naming 
+This is a modified template of F5 BIG-IP Azure ARM Templates 2.0 where modifications are related with naming 
 =======================================================================================================================================================================================
 NIC NAMING
 From
