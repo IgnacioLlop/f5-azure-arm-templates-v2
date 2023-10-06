@@ -160,7 +160,7 @@
                     "name": "[concat('loadBalancerFrontEnd', copyIndex('constructFrontEndIPConfigID'))]",
                     "properties": {
                         "publicIPAddress": {
-                            "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-pip-0', copyIndex('constructFrontEndIPConfigID', 1)))]"
+                            "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('uniqueString'), '-app-0', copyIndex('constructFrontEndIPConfigID', 1),'-pip'))]"
                         }
                     }
                 },
@@ -386,23 +386,23 @@
         "nsg0Array": "[variables('constructNsg0Array')]",
         "nsg0Id": "[if(greater(variables('nsg0Length'), 0), createArray(resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg0Name'))), variables('emptyArray'))]",
         "nsg0Length": "[length(parameters('nsg0'))]",
-        "nsg0Name": "[concat(variables('uniqueString'), '-nsg-01')]",
+        "nsg0Name": "[concat(variables('uniqueString'), '-01-nsg')]",
         "nsg1Array": "[variables('constructNsg1Array')]",
         "nsg1Id": "[if(greater(variables('nsg1Length'), 0), createArray(resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg1Name'))), variables('emptyArray'))]",
         "nsg1Length": "[length(parameters('nsg1'))]",
-        "nsg1Name": "[concat(variables('uniqueString'), '-nsg-02')]",
+        "nsg1Name": "[concat(variables('uniqueString'), '-02-nsg')]",
         "nsg2Array": "[variables('constructNsg2Array')]",
         "nsg2Id": "[if(greater(variables('nsg2Length'), 0), createArray(resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg2Name'))), variables('emptyArray'))]",
         "nsg2Length": "[length(parameters('nsg2'))]",
-        "nsg2Name": "[concat(variables('uniqueString'), '-nsg-03')]",
+        "nsg2Name": "[concat(variables('uniqueString'), '-03-nsg')]",
         "nsg3Array": "[variables('constructNsg3Array')]",
         "nsg3Id": "[if(greater(variables('nsg3Length'), 0), createArray(resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg3Name'))), variables('emptyArray'))]",
         "nsg3Length": "[length(parameters('nsg3'))]",
-        "nsg3Name": "[concat(variables('uniqueString'), '-nsg-04')]",
+        "nsg3Name": "[concat(variables('uniqueString'), '-04-nsg')]",
         "nsg4Array": "[variables('constructNsg4Array')]",
         "nsg4Id": "[if(greater(variables('nsg4Length'), 0), createArray(resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg4Name'))), variables('emptyArray'))]",
         "nsg4Length": "[length(parameters('nsg4'))]",
-        "nsg4Name": "[concat(variables('uniqueString'), '-nsg-05')]",
+        "nsg4Name": "[concat(variables('uniqueString'), '-05-nsg')]",
         "outboundNsgRule": [
             {
                 "name": "allow_loadBalancer_traffic",
